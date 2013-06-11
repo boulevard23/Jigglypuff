@@ -28,7 +28,7 @@ Error correction code (ECC) is a systematic way of building codes that could det
 
 ### 5. By adding the white noise, our group implement security function and test the correctness.
 
-The applications of **accelerometer and distance detector **determine: 
+The applications of **accelerometer and distance detector** determine: 
 
 1. the receiver generates jamming signal;  
 2. sender sends information to receiver;

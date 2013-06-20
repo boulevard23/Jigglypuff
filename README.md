@@ -6,7 +6,7 @@ Enabling Secure Keyless Acoustic Communication for Smartphones
 ## Proposal
 ==========
 
-### 1. Demonstrate encode function by transferring text to voice frequency (9,000~10,000 Hz).
+### 1. Demonstrate encode function by transferring text to voice frequency (9,000~10,000 Hz).(1 week)
 
 In this process, we use two major techniques to implement transition, **FSK** and **ECC**. 
 
@@ -14,19 +14,19 @@ Frequency shift keying (FSK) is a frequency modulation scheme in which digital i
 	
 Error correction code (ECC) is a systematic way of building codes that could detect and correct multiple random symbols. It viewed as cyclic BCH codes, where encoding symbols are derived from the coefficients of a polynomial constructed by multiplying p(x) with a cyclic generator polynomial, which gives rise to efficient decoding algorithms.
 
-### 2.  Demonstrate decode function by transferring voice frequency to text.
+### 2.  Demonstrate decode function by transferring voice frequency to text.(2 weeks)
 
 
 
-### 3.  Do the test on smart phones. To see if we can get the right text by choosing a specific voice frequency (handled by FSK).
+### 3.  Do the test on smart phones. To see if we can get the right text by choosing a specific voice frequency (handled by FSK).(1 week)
 
 
 
-### 4.  Testing if we can use FSK algorithm to transfer any text information to the voice frequency, and vice versa.
+### 4.  Testing if we can use FSK algorithm to transfer any text information to the voice frequency, and vice versa.(1 weeks)
 
 
 
-### 5. By adding the white noise, our group implement security function and test the correctness.
+### 5. By adding the white noise, our group implement security function and test the correctness.(2 weeks)
 
 The applications of **accelerometer and distance detector** determine: 
 

@@ -14,7 +14,7 @@ Frequency shift keying (FSK) is a frequency modulation scheme in which digital i
 	
 Error correction code (ECC) is a systematic way of building codes that could detect and correct multiple random symbols. It viewed as cyclic BCH codes, where encoding symbols are derived from the coefficients of a polynomial constructed by multiplying p(x) with a cyclic generator polynomial, which gives rise to efficient decoding algorithms.
 
-### 2.  Demonstrate decode function by transferring voice frequency to text.(2 weeks)
+### 2.  Demonstrate decode function by transferring voice frequency to text.(1 week)
 
 
 
@@ -22,7 +22,7 @@ Error correction code (ECC) is a systematic way of building codes that could det
 
 
 
-### 4.  Testing if we can use FSK algorithm to transfer any text information to the voice frequency, and vice versa.(1 weeks)
+### 4.  Testing if we can use FSK algorithm to transfer any text information to the voice frequency, and vice versa.(2 weeks)
 
 
 

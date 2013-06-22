@@ -5,11 +5,11 @@ Enabling Secure Keyless Acoustic Communication for Smartphones
 
 
 ## How to Use
-==========
+===
 When you start the application, there are two buttons. First for sender and another for receiver.
 
 ## Main Class && Methods
-==========
+===
 
 ### Main Part:
 
@@ -43,7 +43,7 @@ When app starts a thread object that continuously records sound.
           agrees: an ACK (Acknowledgment) code is sent (if not received the sender tries to the send the last message again). 
 
 ## Proposal
-==========
+===
 
 ### 1. Demonstrate encode function by transferring text to voice frequency (9,000~10,000 Hz).(1 week)
 
@@ -74,7 +74,7 @@ The applications of **accelerometer and distance detector** determine:
 3. after receiver gets the mixed signal, it will remove the jamming signal.
 
 ## Team Member
-==========
+====
 Chen Si
 
 Wang Jun

@@ -53,6 +53,7 @@ public class ErrorDetection {
 			return CHECKSUM_ERROR;
 		}
 		else{
+			Log.i("MSG", msg);
 			return number;
 		}
 		//return number;

@@ -65,6 +65,7 @@ class FSKRecognizer {
 				for (FSKModemListener lsn : _dataReceivers) {
 					lsn.dataReceivedFromFSKModem(inputBytes);
 				}
+				
 			}
 			_recvBuf.reset();
 		}

@@ -52,4 +52,13 @@
         android:layout_toRightOf="@+id/btnSend"
         android:text="@string/btn_Clear" />
 
+    <Button
+        android:id="@+id/btnDecode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnClear"
+        android:layout_alignBottom="@+id/btnClear"
+        android:layout_toRightOf="@+id/btnClear"
+        android:text="@string/decode" />
+
 </RelativeLayout>

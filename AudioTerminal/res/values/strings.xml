@@ -7,5 +7,6 @@
     <string name="btn_Send">Send</string>
     <string name="btn_Clear">Clear</string>
     <string name="lbl_Received">Received Messages :</string>
+    <string name="decode">decode</string>
 
 </resources>

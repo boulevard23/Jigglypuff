@@ -5,7 +5,8 @@ import threading;
 import web
 
 urls = (
-    '/', 'index'
+    '/', 'index',
+    '/submit', 'submit'
 )
 
 
@@ -18,6 +19,14 @@ class index:
         #data = web.data()
         return "OK"
 
+class submit:
+    def POST(self):
+        data = web.data()
+        f = open("./temp",'w')
+        f.write(data)
+        f.close()
+        #print data
+        return "OK"
 
 
 class MTimerClass(threading.Thread):  # cookie监控时钟

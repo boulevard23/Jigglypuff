@@ -22,6 +22,7 @@ var rafID = null;
 var analyserContext = null;
 var canvasWidth, canvasHeight;
 var recIndex = 0;
+var first = true;
 
 
 // define additional flag
@@ -46,6 +47,38 @@ function drawWave( buffers ) {
     drawBuffer( canvas.width, canvas.height, canvas.getContext('2d'), buffers[0] );
 }
 
+function postResult(buffers){
+    //audioRecorder.exportWAV(doneEncoding );
+
+    //alert(buffers[0][10]);
+    var myJsonString = JSON.stringify(buffers[0]);
+    alert(buffers[0].length);
+    $(function(){
+
+        $(showcase).text("Posting Data...");
+         $.ajax({                                                 //调用jquery的ajax方法
+            type: "POST",                                     //设置ajax方法提交数据的形式
+            url: "/submit",                                      
+            data: myJsonString,
+            contentType: "multipart/form-data",
+            beforeSend: function(xhr){
+                var upload = xhr.upload;
+                xhr.setRequestHeader("Cache-control","no-cache");
+                xhr.setRequestHeader("X-File-Name","K");
+               // xhr.setRequestHeader("X-File-Size",
+           },
+            success: function(msg){  
+                alert("SUCC");
+                $(showcase).text("Success");
+            }
+            });
+
+
+    });
+    
+}
+
+
 function doneEncoding( blob ) {
     Recorder.forceDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
     recIndex++;
@@ -67,6 +100,31 @@ function toggleRecording( e ) {
     }
 }
 
+function startRecording() {
+        // start recording
+
+        if (!audioRecorder){
+            return;
+        }
+        if(first == true){
+            first = false;
+            audioRecorder.clear();
+            audioRecorder.record();
+        }
+}
+
+function stopRecording() {
+        // stop recording
+        if(first == false){
+        audioRecorder.stop();
+        //e.classList.remove("recording");
+        audioRecorder.getBuffers( drawWave );
+        audioRecorder.getBuffers( postResult);
+        //saveAudio();
+        first = true;
+        //saveAudio();
+    }
+}
 function convertToMono( input ) {
     var splitter = audioContext.createChannelSplitter(2);
     var merger = audioContext.createChannelMerger(2);
@@ -80,6 +138,12 @@ function convertToMono( input ) {
 function cancelAnalyserUpdates() {
     window.webkitCancelAnimationFrame( rafID );
     rafID = null;
+}
+
+function stateChange(newState) {
+    setTimeout(function(){
+        if(newState == true){stopRecording();}
+    }, 5000);
 }
 
 
@@ -133,7 +197,7 @@ function updateAnalysers(time) {
         }
             // condition 2
             if(i > 50 && i < 80){
-                if(magnitude >= 100){
+                if(magnitude >= 110){
                     condition_2 = true;
                 }
             }
@@ -141,7 +205,8 @@ function updateAnalysers(time) {
             // judge if both OK
             if(condition_1 == true && condition_2 == true){
                 // Do something
-                alert(magnitude);
+                startRecording();
+                stateChange(condition_1);
                 resetCondition();
             }
     }
